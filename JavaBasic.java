@@ -41,9 +41,9 @@ public class JavaBasic {
         // int area = side*side;
         // System.out.println("Area of sqaure is : "+area);
 
-        System.out.println("Enter a and b : ");
-        int a = sc.nextInt();
-        int b = sc.nextInt();
+        // System.out.println("Enter a and b : ");
+        // int a = sc.nextInt();
+        // int b = sc.nextInt();
         // System.out.println("Addition is : "+(a+b));
         // System.out.println("Subtraction is : "+(a-b));
         // System.out.println("Modulo is : "+(a%b));
@@ -51,9 +51,24 @@ public class JavaBasic {
         // System.out.println("Unary operator (Post increment) : "+(b++));
         // System.out.println("a equals b o not : "+(a==b));
         // System.out.println("a equals b or not : "+(a!=b));
-        b += a;
-        System.out.println(b);
+        // b += a;
+        // System.out.println(b);
         
+        // String result = ((a%2)==0)? "even":"Odd";
+        // System.out.println("Number -> "+result);
+
+        // int marks = b;
+        // String result2 = (marks>=33)?"Pass":"Fail";
+        // System.out.println("Result is : "+result2);
+
+        System.out.print("Enter Number : ");
+        int number = sc.nextInt();
+        if(number>=0){
+            System.out.println("Positive");
+        }
+        else{
+            System.out.println("Negative");
+        }
     }
 }
 
