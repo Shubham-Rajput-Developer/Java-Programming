@@ -1,3 +1,4 @@
+package Patterns;
 public class ABCDEPatterns {
     public static void main(String[] args) {
         char ch ='A';
