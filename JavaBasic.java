@@ -69,6 +69,8 @@ public class JavaBasic {
         else{
             System.out.println("Negative");
         }
+
+    sc.close();
     }
 }
 

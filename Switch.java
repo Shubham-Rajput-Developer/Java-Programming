@@ -45,6 +45,6 @@ public class Switch {
                 System.out.println("wrong choice");
                 break;
         }
-
+        sc.close();
     }
 }

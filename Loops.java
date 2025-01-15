@@ -35,15 +35,15 @@ public class Loops{
     //     System.out.println("****");
     // }
 
-    do{
-        System.out.println("Enter your Number : ");
-        int n = sc.nextInt();
-        if(n%10==0){
-            // break;
-            continue;
-        }
-        System.out.println("Number was : "+n);
-    }while(true);
+    // do{
+    //     System.out.println("Enter your Number : ");
+    //     int n = sc.nextInt();
+    //     if(n%10==0){
+    //         // break;
+    //         continue;
+    //     }
+    //     System.out.println("Number was : "+n);
+    // }while(true);
 
     // for(int i=0;i<10;i++){
     //     if(i==3){
@@ -51,5 +51,13 @@ public class Loops{
     //     }
     //     System.out.println(i);
     // }
+
+    // for(int i=0;i<5;i++)
+    // {
+    //     System.out.println("Hello");
+    //     i+=2;
+    // }
+
+    sc.close();
     }
 }

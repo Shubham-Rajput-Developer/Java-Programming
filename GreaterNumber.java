@@ -16,5 +16,7 @@ public class GreaterNumber {
         else{
             System.out.println("C is greater");
         }
+
+    sc.close();
     }
 }
