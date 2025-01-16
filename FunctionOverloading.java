@@ -25,5 +25,6 @@ public class FunctionOverloading {
         System.out.println(Sum(a,b));
         System.out.println(Sum(a,b,c));
         System.out.println(Sum(4.4f,5.5f));
+        sc.close();
     }
 }

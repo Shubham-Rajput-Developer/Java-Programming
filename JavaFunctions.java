@@ -31,6 +31,6 @@ public class JavaFunctions {
         
         System.out.println("Binomial coificient of a and b i s: "+BinomialCoficient(a, b));
         
-        
+        sc.close();
     }
 }
