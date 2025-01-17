@@ -1,3 +1,4 @@
+package Basic;
 import java.util.*;
 public class GreaterNumber {
     public static void main(String args[]){
