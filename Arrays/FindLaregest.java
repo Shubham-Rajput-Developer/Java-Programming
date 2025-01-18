@@ -1,4 +1,3 @@
-package Arrays;
 
 public class FindLaregest {
     public static void Find(int arr[]){
