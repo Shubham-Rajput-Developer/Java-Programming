@@ -1,6 +1,5 @@
 package String;
 
-import java.util.Scanner;
 
 public class shortestPath {
     public static int checkDistance(String path){

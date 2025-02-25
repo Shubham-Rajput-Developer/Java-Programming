@@ -26,5 +26,6 @@ public class string {
         // System.out.println(name+" "+"rajput");
         //printletter(name);
         System.out.println(checkPalindrome(name));
+        sc.close();
     }
 }
