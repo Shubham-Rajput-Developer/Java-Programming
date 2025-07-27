@@ -17,5 +17,13 @@ public class Multiplication {
         main.add(arr2);
         main.add(arr3);
         System.out.println(main);
+
+        for(int i=0;i<main.size();i++){
+            ArrayList<Integer> curr = main.get(i);
+            for(int j=0;j<curr.size();j++){
+                System.out.print(curr.get(j)+" ");
+            }
+            System.out.println();
+        }
     }
 }
