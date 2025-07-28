@@ -10,6 +10,22 @@ public class PairSum {
         }
         return false;
     }
+    public static boolean optimizedSumCheck(ArrayList<Integer> list, int target){
+        int left = 0;
+        int right = list.size()-1;
+        while(left<right){
+            if(list.get(left)+list.get(right)==target){
+                return true;
+            }
+            else if(list.get(left)+list.get(right)<target){
+                left++;
+            }
+            else if(list.get(left)+list.get(right)>target){
+                right--;
+            }
+        }
+        return false;
+    }
     public static void main(String args[]){
         ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
@@ -19,6 +35,6 @@ public class PairSum {
         list.add(5);
         list.add(6);
         list.add(7);
-        System.out.println(checkSum((list),50));
+        System.out.println(optimizedSumCheck(list,5));
     }
 }
