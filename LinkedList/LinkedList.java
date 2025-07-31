@@ -123,6 +123,53 @@ public class LinkedList{
         return val; 
     }
 
+    public int itrSearch(int key){
+        Node temp = Head;
+        int idx = 0;
+        while(temp!=null){
+            if(temp.data==key){
+                return idx;
+            }
+            temp = temp.next;
+            idx++;
+        }
+        return -1;
+    }
+
+    //Recursive search
+    public int helper(int key, Node Head){
+        if(Head == null){
+            return -1;
+        }
+        if(Head.data == key){
+            return 0;
+        }
+
+        int idx = helper(key, Head.next);
+        if(idx==-1){
+            return -1;
+        }
+        //return value is 0 so add 1 to make it correct and return
+        return idx+1;
+    }
+    public int recSearch(int key){
+        return helper(key, Head);
+    }
+
+    public void reverse(){
+        Node prev = null;
+        Node curr = Tail = Head;
+        Node next;
+        while(curr!=null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Head = prev;
+    }
+
+    
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
         ll.addFirst(2);
@@ -131,10 +178,14 @@ public class LinkedList{
         ll.addLast(4);
         ll.addMiddle(2, 9);
         ll.print();
-        ll.removeFirst();
-        ll.print();
-        ll.removeLast();
-        ll.print();
-        System.out.println("Size of LinkedList : "+size);
+        // ll.removeFirst();
+        //ll.print();
+        //ll.removeLast();
+        //ll.print();
+        // System.out.println("Size of LinkedList : "+size);
+        // System.out.println("Key found at : "+ll.recSearch(3));
+        // System.out.println("Key found at : "+ll.recSearch(10));
+        ll.reverse();
+        ll.print();   
     }
 }
