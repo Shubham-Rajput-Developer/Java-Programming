@@ -239,6 +239,51 @@ public class LinkedList{
         return true;
     }
 
+    //cycle detect
+    public static boolean isCycle(){
+        Node fast = Head;
+        Node slow = Head;
+        while(fast != null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow==fast){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void removeCycle(){
+        //detect cycle
+        Node fast = Head;
+        Node slow = Head;
+        boolean cycle = false;
+        while(fast != null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast==slow){
+                cycle = true;
+                break;
+            }
+        }
+
+        if(cycle==false){
+            return ;
+        }
+
+        //find meetting point
+        slow = Head;
+        Node prev = null;
+        while(slow!=fast){
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        //remove cycle 
+        prev.next = null;
+    }
+
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
         ll.addFirst(2);
@@ -246,7 +291,7 @@ public class LinkedList{
         ll.addLast(2);
         ll.addLast(1);
         //ll.addMiddle(2, 9);
-        ll.print();
+        //ll.print();
         // ll.removeFirst();
         //ll.print();
         //ll.removeLast();
@@ -258,6 +303,16 @@ public class LinkedList{
         // ll.print();   
         //ll.deleteNthFromEnd(3);
         //ll.print();
-        System.out.println("Is LinkedList is Palindrome : "+ll.checkPalindrome());
+        //System.out.println("Is LinkedList is Palindrome : "+ll.checkPalindrome());
+        Head = new Node(1);
+        Node temp = new Node(2);
+        Head.next = temp;
+        Head.next.next = new Node(3);
+        Head.next.next.next = new Node(4);
+        Head.next.next.next.next = temp;
+        System.out.println(isCycle());
+        removeCycle();
+        System.out.println(isCycle());
+
     }
 }
