@@ -284,12 +284,81 @@ public class LinkedList{
         prev.next = null;
     }
 
+    //Mid for merge sort
+    public Node getMid(Node Head){
+        Node slow = Head;
+        Node fast = Head.next;
+
+        while(fast != null && fast.next != null){
+            slow  = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    //merge function
+    public Node merge(Node head1, Node head2){
+        Node mergedLL = new Node(-1);
+        Node temp = mergedLL;
+
+        while(head1 != null && head2 != null){
+            if(head1.data <= head2.data){
+                temp.next = head1;
+                head1 = head1.next;
+                temp = temp.next;
+            }
+            else{
+                temp.next = head2;
+                head2 = head2.next;
+                temp = temp.next;
+            }    
+        }
+
+        while(head1!=null){
+            temp.next = head1;
+            head1 = head1.next;
+            temp = temp.next;
+        }
+        while (head2!=null) {
+            temp.next = head2;
+            head2 = head2.next;
+            temp = temp.next;
+        }
+
+        return mergedLL.next;
+    }
+
+    //Merge sort
+    public Node mergeSort(Node Head){
+        if(Head == null || Head.next == null){
+            return Head;
+        }
+        //find mid
+        Node mid = getMid(Head);
+
+        //left half, right half
+        Node rightHead = mid.next;
+        mid.next = null;
+        Node newLeft = mergeSort(Head);
+        Node newRight = mergeSort(rightHead);
+
+        //merge
+        return merge(newLeft,newRight);
+    }
+
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
         ll.addFirst(2);
         ll.addFirst(1);
-        ll.addLast(2);
-        ll.addLast(1);
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.addFirst(6);
+        ll.addFirst(5);
+        //5->6->1->2->3->4
+        ll.print();
+        Head = ll.mergeSort(Head);
+        ll.print();
+
         //ll.addMiddle(2, 9);
         //ll.print();
         // ll.removeFirst();
@@ -304,15 +373,16 @@ public class LinkedList{
         //ll.deleteNthFromEnd(3);
         //ll.print();
         //System.out.println("Is LinkedList is Palindrome : "+ll.checkPalindrome());
-        Head = new Node(1);
-        Node temp = new Node(2);
-        Head.next = temp;
-        Head.next.next = new Node(3);
-        Head.next.next.next = new Node(4);
-        Head.next.next.next.next = temp;
-        System.out.println(isCycle());
-        removeCycle();
-        System.out.println(isCycle());
+        // Head = new Node(1);
+        // Node temp = new Node(2);
+        // Head.next = temp;
+        // Head.next.next = new Node(3);
+        // Head.next.next.next = new Node(4);
+        // Head.next.next.next.next = temp;
+        // System.out.println(isCycle());
+        // removeCycle();
+        // System.out.println(isCycle());
+
 
     }
 }
