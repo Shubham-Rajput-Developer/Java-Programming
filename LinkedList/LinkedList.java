@@ -346,18 +346,51 @@ public class LinkedList{
         return merge(newLeft,newRight);
     }
 
+
+    //Zig zag LL
+    public void ZigZag(){
+        //find zigzag
+        Node mid = getMid(Head);
+
+        //reverse 2nd half
+        Node curr = mid.next;
+        mid.next = null;
+        Node prev = null;
+        Node next;
+        while(curr!= null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node LeftHead = Head;
+        Node RightHead = prev;
+        Node nextLeft , nextRight;
+
+        //alt - merge
+        while(LeftHead!=null && RightHead!=null){
+            nextLeft = LeftHead.next;
+            LeftHead.next = RightHead;
+            nextRight = RightHead.next;  
+            RightHead.next = nextLeft;
+
+            RightHead = nextRight;
+            LeftHead = nextLeft;
+        }
+
+    }
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
         ll.addFirst(2);
         ll.addFirst(1);
         ll.addLast(3);
         ll.addLast(4);
-        ll.addFirst(6);
-        ll.addFirst(5);
-        //5->6->1->2->3->4
+        ll.addLast(5);
+        ll.addLast(6);
         ll.print();
-        Head = ll.mergeSort(Head);
-        ll.print();
+        
+        // Head = ll.mergeSort(Head);
+        // ll.print();
 
         //ll.addMiddle(2, 9);
         //ll.print();
@@ -383,6 +416,8 @@ public class LinkedList{
         // removeCycle();
         // System.out.println(isCycle());
 
+        ll.ZigZag();
+        ll.print();
 
     }
 }
