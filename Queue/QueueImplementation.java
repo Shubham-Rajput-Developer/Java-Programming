@@ -26,7 +26,7 @@ public class QueueImplementation{
         }
 
         //remove
-        public  int remove(){
+        public int remove(){
             if(isEmpty()){
                 System.out.println("Empty queue");
                 return -1;
@@ -42,7 +42,7 @@ public class QueueImplementation{
 
         public  int peek(){
             if(isEmpty()){
-                System.out.println("Empty ahe asabai");
+                System.out.println("Empty Queue");
                 return -1;
             }
             return arr[0];
