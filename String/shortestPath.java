@@ -10,7 +10,7 @@ public class shortestPath {
             if(dir == 'N'){
                 y++;
             }
-            else if(dir == 'S'){
+            else if( dir == 'S'){
                 y--;
             }
             else if(dir == 'E'){
