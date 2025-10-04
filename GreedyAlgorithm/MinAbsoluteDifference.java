@@ -1,4 +1,3 @@
-package GreedyAlgorithm;
 
 import java.util.Arrays;
 
