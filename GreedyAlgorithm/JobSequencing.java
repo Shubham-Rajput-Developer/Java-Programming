@@ -31,7 +31,7 @@ public class JobSequencing{
                 time++;
             }
         }
-
+        System.out.println(time);
         System.out.println(seq);
     }
 }
